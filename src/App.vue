@@ -3,15 +3,17 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <hello-component :user="user"></hello-component>
+
+    <greetings-component></greetings-component>
     <shopping-list></shopping-list>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import HelloComponent from './components/HelloComponent'
+
 import ShoppingList from './components/ShoppingList'
+import GreetingsComponent from './components/GreetingsComponent'
 
 
 export default {
@@ -23,8 +25,8 @@ export default {
   },
   components: {
     HelloWorld,
-    HelloComponent,
-    ShoppingList
+    ShoppingList,
+    GreetingsComponent
   }
 }
 </script>
