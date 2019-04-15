@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <hello-component user="sow"></hello-component>
+    <hello-component :user="user"></hello-component>
     <shopping-list></shopping-list>
   </div>
 </template>
@@ -16,8 +16,10 @@ import ShoppingList from './components/ShoppingList'
 
 export default {
   name: 'app',
-  data: {
-    user: 'sow'
+  data () {
+    return {
+      user: 'nnn'
+    };
   },
   components: {
     HelloWorld,

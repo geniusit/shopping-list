@@ -9,6 +9,8 @@
                 msg: 'Hello!'
             }
         },
-        props: ['user']
+        props: {
+            user:String
+        }
     }
 </script>
