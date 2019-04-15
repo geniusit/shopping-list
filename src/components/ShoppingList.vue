@@ -26,68 +26,46 @@ ul li span {
 <template>
   <div class="container">
     <h2>{{ title }}</h2>
-    <div class="input-group">
-      <input
-        v-model="data.newItem"
-        @keyup.enter="addItem"
-        placeholder="add shopping list item"
-        type="text"
-        class="form-control"
-      >
-      <span class="input-group-btn">
-        <button @click="addItem" class="btn btn-default" type="button">Add!</button>
-      </span>
-    </div>
+    
+    <add-item-component v-on:add="addItem"></add-item-component>
+    <items-component :items="items"></items-component>
 
-    <ul>
-      <li :key="item.title" v-for="item in data.items" :class="{ 'removed': item.checked }">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" v-model="item.checked">
-            {{ item.text }}
-          </label>
-        </div>
-      </li>
-    </ul>
     <div class="footer">
       <hr>
-      <em>Change the title of your shopping list here</em>
-      <input v-model="title">
+        <change-title-component v-model="title"></change-title-component>
     </div>
+   
+    
   </div>
 </template>
-
-
 <script>
-var data = {
-  items: [
-    { text: "Bananas", checked: true },
-    { text: "Apples", checked: false }
-  ],
-  title: "My Shopping List",
-  newItem: ""
-};
+
+    import AddItemComponent from './shopping-list/AddItemComponent'
+    import ItemsComponent from './shopping-list/ItemsComponent'
+    import ChangeTitleComponent from './shopping-list/ChangeTitleComponent'
 
 export default {
   data() {
     return {
       title: "Shopping List!",
-      data: data
+      items: [
+        { text: "Bananas", checked: true },
+        { text: "Apples", checked: false }
+      ]
     };
   },
   methods: {
-    addItem: function() {
-      var text;
-
-      text = this.data.newItem.trim();
-      if (text) {
-        this.data.items.push({
-          text: text,
-          checked: false
-        });
-        this.data.newItem = "";
-      }
+    addItem(text){
+      this.items.push({
+        text: text,
+        checked: false
+      })
     }
+  },
+  components : {
+    AddItemComponent,
+    ItemsComponent,
+    ChangeTitleComponent
   }
 };
 </script>

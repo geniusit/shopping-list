@@ -3,24 +3,22 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-
     <greetings-component></greetings-component>
     <shopping-list></shopping-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
-import ShoppingList from './components/ShoppingList'
-import GreetingsComponent from './components/GreetingsComponent'
-
+import ShoppingList from "./components/ShoppingList";
+import GreetingsComponent from "./components/GreetingsComponent";
 
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      user: 'nnn'
+      user: "nnn"
     };
   },
   components: {
@@ -28,12 +26,12 @@ export default {
     ShoppingList,
     GreetingsComponent
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
